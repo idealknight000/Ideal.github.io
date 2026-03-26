@@ -3,56 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ideal App Download</title>
+    <title>Ideal App – Feature Showcase & Download</title>
     <style>
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
-            text-align: center; 
-            background: #0d1117; 
-            color: #c9d1d9; 
-            padding: 80px 20px; 
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .container { 
-            border: 1px solid #30363d; 
-            padding: 40px; 
-            border-radius: 12px; 
-            display: inline-block; 
-            background: #161b22; 
-            max-width: 400px;
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.5;
         }
-        h1 { color: #58a6ff; margin-bottom: 10px; }
-        p { color: #8b949e; margin-bottom: 30px; font-size: 1.1em; }
-        .btn { 
-            background: #238636; 
-            color: white; 
-            padding: 16px 32px; 
-            text-decoration: none; 
-            border-radius: 6px; 
-            font-weight: 600; 
-            display: inline-block; 
-            font-size: 18px;
-            transition: background 0.2s;
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
         }
-        .btn:hover { background: #2ea043; }
-        .version-tag {
-            font-size: 0.8em;
+
+        /* Header / Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #58a6ff, #bc8cff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
             color: #8b949e;
-            margin-top: 15px;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #238636;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 12px rgba(35,134,54,0.3);
+        }
+
+        .download-btn:hover {
+            background: #2ea043;
+            transform: translateY(-1px);
+        }
+
+        .version-tag {
             display: block;
+            font-size: 0.8rem;
+            color: #8b949e;
+            margin-top: 0.75rem;
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0 2rem;
+        }
+
+        .feature-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: #58a6ff;
+        }
+
+        .feature-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #0d1117;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .feature-content {
+            padding: 1.2rem;
+        }
+
+        .feature-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #58a6ff;
+        }
+
+        .feature-content p {
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #30363d;
+            font-size: 0.8rem;
+            color: #6e7681;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 { font-size: 2rem; }
+            .container { padding: 1.5rem; }
+            .features { gap: 1.2rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+<div class="container">
+    <div class="hero">
         <h1>Ideal App</h1>
-        <p>Your app is ready for download.</p>
-        
-        <a href="https://github.com/idealknight000/Ideal.github.io/releases/download/v_1.0/Ideal_v_2_6_release.apk" class="btn">
-            Download APK
+        <p>All‑in‑one productivity tool with 9 powerful features. Download the APK and start exploring.</p>
+        <a href="https://github.com/idealknight000/Ideal.github.io/releases/download/v_1.0/Ideal_v_2_6_release.apk" class="download-btn">
+            ⬇️ Download APK
         </a>
-
         <span class="version-tag">Version 2.6 Release</span>
     </div>
+
+    <div class="features">
+        <!-- Feature 1: Home -->
+        <div class="feature-card">
+            <img class="feature-img" src="Screenshot_20260326_061303_Ideal.jpg" alt="Home screen">
+            <div class="feature-content">
+                <h3>🏠 Home</h3>
+                <p>Your dashboard with daily overview, stats, and quick access to all tools.</p>
+            </div>
+        </div>
+
+        <!-- Feature 2: Settings -->
+        <div class="feature-card">
+            <img class="feature-img" src="Screenshot_20260326_061306_Ideal.jpg" alt="Settings">
+            <div class="feature-content">
+                <h3>⚙️ Settings</h3>
+                <p>Customise theme, notifications, and app behaviour to match your style.</p>
+            </div>
+        </div>
+
+        <!-- Feature 3: Profile -->
+        <div class="feature-card">
+            <img class="feature-img" src="Screenshot_20260326_061310_Ideal.jpg" alt="Profile">
+            <div class="feature-content">
+                <h3>👤 Profile</h3>
+                <p>Manage your personal info, avatar, and track your progress.</p>
+            </div>
+        </div>
+
+        <!-- Feature 4: Schedule -->
+        <div class="feature-card">
+            <img class="feature-img" src="Screenshot_20260326_061315_Ideal.jpg" alt="Schedule">
+            <div class="feature-content">
+                <h3>📅 Schedule</h3>
+                <p>Plan your week, set reminders, and never miss important tasks.</p>
+            </div>
+        </div>
+
+        <!-- Feature 5: Timer & Stopwatch -->
+        <div class="feature-card">
+            <img class="feature-img" src="Screenshot_20260326_061319_Ideal.jpg" alt="Timer & Stopwatch">
+            <div class="feature-content">
+                <h3>⏱️ Timer & Stopwatch</h3>
+                <p>Focus sessions, countdowns, and precise time tracking for any activity.</p>
+            </div>
+        </div>
+
+        <!-- Feature 6: Question Solver -->
+        <div class="feature-card">
+            <img class="feature-img" src="Screenshot_20260326_061322_Ideal.jpg" alt="Question Solver">
+            <div class="feature-content">
+                <h3>🧠 Question Solver</h3>
+                <p>Get step‑by‑step solutions for math, logic, and general questions.</p>
+            </div>
+        </div>
+
+        <!-- Feature 7: Analytics -->
+        <div class="feature-card">
+            <img class="feature-img" src="Screenshot_20260326_061335_Ideal.jpg" alt="Analytics">
+            <div class="feature-content">
+                <h3>📊 Analytics</h3>
+                <p>Track productivity, task completion, and see your improvement over time.</p>
+            </div>
+        </div>
+
+        <!-- Feature 8: Achievements -->
+        <div class="feature-card">
+            <img class="feature-img" src="Screenshot_20260326_062047_Ideal.jpg" alt="Achievements">
+            <div class="feature-content">
+                <h3>🏆 Achievements</h3>
+                <p>Earn badges and celebrate milestones as you use the app.</p>
+            </div>
+        </div>
+
+        <!-- Feature 9: Hobbies -->
+        <div class="feature-card">
+            <img class="feature-img" src="Screenshot_20260326_062232_Ideal.jpg" alt="Hobbies">
+            <div class="feature-content">
+                <h3>🎨 Hobbies</h3>
+                <p>Log your interests, discover new activities, and stay inspired.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Ideal App. Free and open source.</p>
+    </div>
+</div>
 </body>
 </html>
